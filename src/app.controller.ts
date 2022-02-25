@@ -74,8 +74,8 @@ export class AppController {
 
   @Post('logout')
   async logout(@Res({ passthrough: true}) response: Response){
-    
-
+    response.clearCookie('jwt');
+    return 'Successfully logged out';
   }
 
 
